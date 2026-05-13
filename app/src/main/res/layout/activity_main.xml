@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0a0118">
+
+    <!-- Main UI WebView (loads local index.html) -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Cineby WebView (replaces iframe - sits on top when visible) -->
+    <LinearLayout
+        android:id="@+id/cinebyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/cinebyTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#0d0d1a"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <Button
+                android:id="@+id/cinebyHomeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="← HOME"
+                android:textColor="#ffffff"
+                android:backgroundTint="#e8008a"
+                android:textSize="12sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <Button
+                android:id="@+id/cinebyBackBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="‹"
+                android:textColor="#ffffff"
+                android:backgroundTint="#1a1a2e"
+                android:layout_marginStart="6dp"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/cinebyForwardBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="›"
+                android:textColor="#ffffff"
+                android:backgroundTint="#1a1a2e"
+                android:layout_marginStart="4dp"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/cinebyReloadBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="↻"
+                android:textColor="#00f0ff"
+                android:backgroundTint="#1a1a2e"
+                android:layout_marginStart="4dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/cinebyUrlBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="#00f0ff"
+                android:textSize="12sp"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:text="cineby.app" />
+
+            <Button
+                android:id="@+id/cinebySaveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="★ SAVE"
+                android:textColor="#0d0d1a"
+                android:backgroundTint="#f5a623"
+                android:textSize="12sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/cinebyWebView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</FrameLayout>
